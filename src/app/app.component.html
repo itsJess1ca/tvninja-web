@@ -1,0 +1,18 @@
+<md-sidenav-layout>
+
+  <md-sidenav #sidenav>
+    <h1>test</h1>
+  </md-sidenav>
+
+  <md-toolbar id="tvn-appbar">
+    <button class="tvn-menu-toggle" md-icon-button (click)="sidenav.open()">
+      <md-icon>menu</md-icon>
+    </button>
+    <h1>TVNinja</h1>
+  </md-toolbar>
+
+  <main id="tvn-content">
+    <router-outlet></router-outlet>
+  </main>
+
+</md-sidenav-layout>

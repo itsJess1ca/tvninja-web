@@ -1,0 +1,36 @@
+<section class="tvn-listing-section">
+  <h4 class="tvn-listing-category-header">Your favorites</h4>
+
+  <md-grid-list [cols]="columns" rowHeight="175" gutterSize="3px">
+
+    <md-grid-tile *ngFor="let listing of favorites; let i = index" class="tvn-listing">
+      <!--<img src="{{listing.image}}" alt="image of {{listing.seriesName}}">-->
+      <img class="tvn-listing-image" [src]="listingImage(listing.image, i)" alt="image of {{listing.seriesName}}">
+
+      <md-grid-tile-footer class="tvn-listing-footer">
+        <h3 md-line>{{listing.seriesName}}</h3>
+        <span md-line>{{listing.nextAirDate}}</span>
+      </md-grid-tile-footer>
+
+    </md-grid-tile>
+
+  </md-grid-list>
+</section>
+<section class="tvn-listing-section" *ngFor="let category of listingCategories">
+  <h4 class="tvn-listing-category-header">{{category.name}}</h4>
+
+  <md-grid-list [cols]="columns" rowHeight="175" gutterSize="3px">
+
+    <md-grid-tile *ngFor="let listing of category.listings; let i = index" class="tvn-listing">
+      <!--<img src="{{listing.image}}" alt="image of {{listing.seriesName}}">-->
+      <img class="tvn-listing-image" [src]="listingImage(listing.image, i)" alt="image of {{listing.seriesName}}">
+
+      <md-grid-tile-footer class="tvn-listing-footer">
+        <h3 md-line>{{listing.seriesName}}</h3>
+        <span md-line>{{listing.nextAirDate}}</span>
+      </md-grid-tile-footer>
+
+    </md-grid-tile>
+
+  </md-grid-list>
+</section>

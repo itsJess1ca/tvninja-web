@@ -1,0 +1,30 @@
+@import 'variables';
+
+html, body{
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: $backgroundColor;
+  color: $textColor;
+}
+
+#tvn-appbar {
+  background: $primaryColor;
+  box-shadow: $boxShadow;
+  position: fixed;
+  top: 0;
+  .tvn-menu-toggle {
+    color: $textColor;
+    background: transparent;
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+#tvn-content {
+  padding: $padding;
+  margin-top: $appbarHeight;
+  min-height: calc(100vh - (#{$appbarHeight} + (#{$padding} * 2)));
+}
